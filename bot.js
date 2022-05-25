@@ -22,7 +22,7 @@ const getRandomCoctail = async () => {
     alcoholic: drink.strAlcoholic,
     instructions: drink.strInstructions,
     image: drink.strDrinkThumb,
-    url: "http://localhost:3000/coctail/details?id=13501",
+    url: `http://localhost:3000/coctail/details?id=${drink.idDrink}`,
   };
 };
 
