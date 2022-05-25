@@ -1,4 +1,4 @@
-require("dotenv").config();
+const config = require("./config/keys");
 const axios = require("axios");
 const Discord = require("discord.js");
 const { Client, MessageEmbed } = require("discord.js");
@@ -9,7 +9,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+client.login(config.DISCORDJS_BOT_TOKEN);
 
 const getRandomCoctail = async () => {
   const response = await axios.get(
@@ -22,7 +22,7 @@ const getRandomCoctail = async () => {
     alcoholic: drink.strAlcoholic,
     instructions: drink.strInstructions,
     image: drink.strDrinkThumb,
-    url: "http://localhost:3000/coctail",
+    url: "http://localhost:3000/coctail/details?id=13501",
   };
 };
 
